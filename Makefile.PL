@@ -6,6 +6,7 @@ BEGIN {
         Module::Install
         Module::Install::AuthorTests
         Module::Install::ReadmeFromPod
+        Module::Install::Repository
     );
     my @not_available;
     for my $mod (@devmods) {
@@ -27,5 +28,7 @@ all_from 'lib/Data/Apple/PriceTier.pm';
 readme_from 'lib/Data/Apple/PriceTier.pm';
 
 author_tests 'xt';
+
+auto_set_repository;
 
 WriteAll;
