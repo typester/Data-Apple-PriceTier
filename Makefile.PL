@@ -1,0 +1,31 @@
+use strict;
+use warnings;
+
+BEGIN {
+    my @devmods = qw(
+        Module::Install
+        Module::Install::AuthorTests
+        Module::Install::ReadmeFromPod
+    );
+    my @not_available;
+    for my $mod (@devmods) {
+        eval qq{require $mod} or push @not_available, $mod;
+    }
+    if (@not_available) {
+        print qq{# The following modules are not available.\n};
+        print qq{# `$^X $0 | cpanm` will install them:\n};
+        print $_, "\n" for @not_available;
+        print "\n";
+        exit -1;
+    }
+}
+
+use inc::Module::Install;
+
+name 'Data-Apple-PriceTier';
+all_from 'lib/Data/Apple/PriceTier.pm';
+readme_from 'lib/Data/Apple/PriceTier.pm';
+
+author_tests 'xt';
+
+WriteAll;
