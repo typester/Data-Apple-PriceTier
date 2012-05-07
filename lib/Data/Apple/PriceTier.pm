@@ -372,7 +372,7 @@ Return your proceed list for given country or currency.
 
 =head2 $obj = Data::Apple::PriceTier->new(%country_or_currency);
 
-Create Data::Apple::PriceTier object and return it. See `INSTANCE METHODS` showed below for more detail.
+Create Data::Apple::PriceTier object and return it. See C<INSTANCE METHODS> showed below for more detail.
 
 =head2 @countries = Data::Apple::PriceTier->supported_countries;
 
@@ -390,11 +390,11 @@ Return list of supported countries and currencies at once.
 
 =head2 $price = $obj->price_for_tier($tier);
 
-Return customer price for C<$tier> with <$obj>'s country.
+Return customer price for C<$tier> with C<$obj>'s country.
 
 =head2 $proceed = $obj->proceed_for_tier($tier);
 
-Return your proceed for C<$tier> with <$obj>'s country.
+Return your proceed for C<$tier> with C<$obj>'s country.
 
 =head1 AUTHOR
 
