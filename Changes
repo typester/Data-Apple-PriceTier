@@ -1,4 +1,8 @@
 Revision history for Perl extension Data::Apple::PriceTier
 
+0.02 2012-05-07T10:22:48+09:00
+     - no code is changed
+     - fixed doc and build problems
+
 0.01 2012-05-02T16:33:22+09:00
      - initial version

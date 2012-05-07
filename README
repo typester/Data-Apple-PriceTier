@@ -64,8 +64,8 @@ CLASS METHODS
     Return your proceed list for given country or currency.
 
   $obj = Data::Apple::PriceTier->new(%country_or_currency);
-    Create Data::Apple::PriceTier object and return it. See `INSTANCE
-    METHODS` showed below for more detail.
+    Create Data::Apple::PriceTier object and return it. See "INSTANCE
+    METHODS" showed below for more detail.
 
   @countries = Data::Apple::PriceTier->supported_countries;
     List of countries that Apple (and this module) supports.
@@ -78,10 +78,10 @@ CLASS METHODS
 
 INSTANCE METHODS
   $price = $obj->price_for_tier($tier);
-    Return customer price for $tier with <$obj>'s country.
+    Return customer price for $tier with $obj's country.
 
   $proceed = $obj->proceed_for_tier($tier);
-    Return your proceed for $tier with <$obj>'s country.
+    Return your proceed for $tier with $obj's country.
 
 AUTHOR
     Daisuke Murase <typester@cpan.org>
