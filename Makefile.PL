@@ -3,7 +3,7 @@ use warnings;
 
 BEGIN {
     my @devmods = qw(
-        Module::Install
+        inc::Module::Install
         Module::Install::AuthorTests
         Module::Install::ReadmeFromPod
         Module::Install::Repository
