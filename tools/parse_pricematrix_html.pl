@@ -57,6 +57,8 @@ for my $t (@tr) {
         push @proceeds, (shift @td)->as_trimmed_text;
     }
 
+    $_ =~ s/,//g for @prices, @proceeds;
+
     push @$price_matrix, \@prices;
     push @$proceed_matrix, \@proceeds;
 }
