@@ -4,7 +4,7 @@ use warnings;
 use Carp;
 use 5.008001;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 our %COUNTRIES = (
     'U.S.'        => 0,
