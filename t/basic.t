@@ -14,5 +14,6 @@ is Data::Apple::PriceTier->proceed_for( country => 'U.S.', tier => 87 ), '700', 
 my $tier_jp = Data::Apple::PriceTier->new( country => 'Japan' );
 is $tier_jp->price_for_tier(1), '85', 'tier 1 jp ok';
 is $tier_jp->proceed_for_tier(2), '119', 'tier 2 jp ok';
+is $tier_jp->price_for_tier(0), '0', 'tier 0 is 0 ok';
 
 done_testing;

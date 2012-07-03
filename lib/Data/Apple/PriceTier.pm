@@ -233,6 +233,7 @@ sub price_for {
     my $tier = $args{tier}
         or croak 'tier parameter is required';
 
+    return 0 if $tier == 0;
     $PRICE_MATRIX->[ $tier - 1 ][ $code ];
 }
 
@@ -243,6 +244,7 @@ sub proceed_for {
     my $tier = $args{tier}
         or croak 'tier parameter is required';
 
+    return 0 if $tier == 0;
     $PROCEED_MATRIX->[ $tier - 1 ][ $code ];
 }
 
@@ -275,11 +277,13 @@ sub new {
 
 sub price_for_tier {
     my ($self, $tier) = @_;
+    return 0 if $tier == 0;
     $PRICE_MATRIX->[ $tier - 1 ][ $self->{code} ];
 }
 
 sub proceed_for_tier {
     my ($self, $tier) = @_;
+    return 0 if $tier == 0;
     $PROCEED_MATRIX->[ $tier - 1 ][ $self->{code} ];
 }
 
