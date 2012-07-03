@@ -248,6 +248,30 @@ sub proceed_for {
     $PROCEED_MATRIX->[ $tier - 1 ][ $code ];
 }
 
+sub prices {
+    my ($class, %args) = @_;
+    my $code = $class->_get_code(%args);
+
+    my @prices;
+    for my $tier (1 .. scalar @$PRICE_MATRIX) {
+        push @prices, $PRICE_MATRIX->[ $tier - 1 ][ $code ];
+    }
+
+    @prices;
+}
+
+sub proceeds {
+    my ($class, %args) = @_;
+    my $code = $class->_get_code(%args);
+
+    my @proceeds;
+    for my $tier (1 .. scalar @$PROCEED_MATRIX) {
+        push @proceeds, $PROCEED_MATRIX->[ $tier - 1 ][ $code ];
+    }
+
+    @proceeds;
+}
+
 sub supported_countries {
     return keys %COUNTRIES;
 }

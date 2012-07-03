@@ -10,6 +10,12 @@ is Data::Apple::PriceTier->price_for( currency => 'Yen', tier => 2 ), '170', 'ye
 
 is Data::Apple::PriceTier->proceed_for( country => 'U.S.', tier => 87 ), '700', 'U.S. proceed 87 ok';
 
+my @prices = Data::Apple::PriceTier->prices( country => 'Japan' );
+is scalar @prices, '87', 'tier 87 ok';
+is $prices[0], '85', 'tier 1 ok';
+is $prices[1], '170', 'tier 2 ok';
+is $prices[-1], '85000', 'max tier ok';
+
 
 my $tier_jp = Data::Apple::PriceTier->new( country => 'Japan' );
 is $tier_jp->price_for_tier(1), '85', 'tier 1 jp ok';
