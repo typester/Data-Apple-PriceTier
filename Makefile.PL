@@ -9,7 +9,12 @@ BEGIN {
     );
     my @not_available;
 
-    eval q{use inc::Module::Install; 1;} or push @not_available, 'inc::Module::Install';
+    {
+        $|=1;
+        local *STDOUT;
+        eval q{use inc::Module::Install; 1;} or push @not_available, 'inc::Module::Install';
+    }
+
     for my $mod (@devmods) {
         eval qq{require $mod} or push @not_available, $mod;
     }
@@ -23,6 +28,7 @@ BEGIN {
 }
 
 use inc::Module::Install;
+$Module::Install::AUTHOR = 0 if $ENV{TRAVIS};
 
 name 'Data-Apple-PriceTier';
 all_from 'lib/Data/Apple/PriceTier.pm';
